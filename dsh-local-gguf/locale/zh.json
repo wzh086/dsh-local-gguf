@@ -1,0 +1,4 @@
+{
+  "title": "本地 GGUF 模型",
+  "description": "通过 LM Studio 或本插件直接托管的 llama.cpp 服务运行本机 GGUF 模型，并提供显存/内存占用估算与推荐加载参数。"
+}

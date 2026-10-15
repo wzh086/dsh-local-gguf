@@ -1,0 +1,53 @@
+{
+  "name": "@local/dsh-local-gguf",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Run local GGUF models in DeepSeek Harness through LM Studio or a directly managed llama.cpp server, with memory estimation and configuration recommendations for this machine.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "gguf",
+    "llama.cpp",
+    "llama-server",
+    "lm-studio",
+    "local-llm"
+  ],
+  "type": "module",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "test",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/run.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-settings-models"]
+    }
+  }
+}

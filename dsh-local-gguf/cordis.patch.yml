@@ -1,0 +1,18 @@
+# Local GGUF models for DeepSeek Harness.
+#
+# One Host row owns the whole feature: the `lmstudio` and `local-gguf` model
+# routes, the GGUF catalog, the hardware probe, and the agent tools.
+#
+# Both routes work with no configuration — the defaults point at LM Studio's
+# standard port and let the model directories be discovered from LM Studio's own
+# index. Override anything under `config.providers` in a profile patch:
+#
+#   - id: local-gguf
+#     config:
+#       modelDirs: ['D:\models']
+#       providers:
+#         lmstudio:
+#           baseURL: http://127.0.0.1:4321/v1
+- insert:
+    - id: local-gguf
+      name: '@local/dsh-local-gguf'

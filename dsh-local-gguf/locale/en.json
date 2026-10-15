@@ -1,0 +1,4 @@
+{
+  "title": "Local GGUF Models",
+  "description": "Run GGUF models on this machine through LM Studio or a directly managed llama.cpp server, with memory estimates and recommended load parameters."
+}
